@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmes</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>movies notes</h1>
+      <hr>
+    </div>
+  </header>
+  <main>
+    <div class="main-content">
+      <div class="left-side">
+        <div class="form-box">
+          <form action action="">
+            <div class="input-box">
+              <input type="text" placeholder="name" id="name" required>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="genre" id="genre" required>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="director" id="director" required>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="year" id="year" required>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="whats your note" id="grade" required>
+            </div>
+            <div class="input-box button-style">
+              <button type="button" onclick="createCard()" id="create-button">create card</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="right-side" id="right-side">
+
+      </div>
+    </div>
+  </main>
+  <script>
+
+     let pai = document.getElementById('right-side')
+
+    function createCard(){
+
+      let name = document.getElementById('name').value
+      let genre = document.getElementById('genre').value
+      let director = document.getElementById('director').value
+      let year = document.getElementById('year').value
+      let grade = document.getElementById('grade').value
+
+      let allValues = [name,genre, director, year, grade]
+      
+
+      // if(name && genre && director && year && grade){
+
+        let card = document.createElement('div');
+        card.setAttribute('class', 'card-style')
+
+        allValues.forEach(value => {
+          let div = document.createElement('div');
+          let input = document.createElement('input')
+          input.value = value
+          div.setAttribute('class', 'input-boxx')
+          div.appendChild(input)
+          card.appendChild(div)
+        })
+        
+        pai.insertBefore(card,null)
+
+        let inputBox = document.querySelectorAll('.input-box > input')
+        console.log(inputBox)
+        for(let i = 0; i<inputBox.length;i++){
+          inputBox[i].value = '';
+        }
+    }  
+  </script>
+</body>
+</html>
