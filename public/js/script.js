@@ -29,7 +29,6 @@ let pai = document.getElementById('right-side')
         pai.insertBefore(card,null)
 
         let inputBox = document.querySelectorAll('.input-box > input')
-        console.log(inputBox)
         for(let i = 0; i<inputBox.length;i++){
           inputBox[i].value = '';
         }
