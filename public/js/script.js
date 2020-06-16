@@ -20,6 +20,7 @@ let pai = document.getElementById('right-side')
           let div = document.createElement('div');
           let input = document.createElement('input')
           input.value = value
+          input.setAttribute('disabled', 'true')
           div.setAttribute('class', 'input-boxx')
           div.appendChild(input)
           card.appendChild(div)
