@@ -25,6 +25,9 @@ const spans = document.querySelectorAll('.input-box > span')
               let spanOriginal = value.cloneNode(false)
               span = spanOriginal
               div.appendChild(span)
+              span.removeAttribute('onmouseover')
+              span.removeAttribute('onclick')
+              span.removeAttribute('onmouseout')
             })
             return card.appendChild(div)
           }
