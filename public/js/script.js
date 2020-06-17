@@ -1,11 +1,12 @@
 let pai = document.getElementById('right-side')
 const spans = document.querySelectorAll('.input-box > span')
+let clickedOn = false;
 
     function createCard(){
 
       let name = document.getElementById('name').value
       let genre = document.getElementById('genre').value
-      let director = document.getElementById('director').value
+      let director = document.getElementById('director').valuex
       let year = document.getElementById('year').value
       
 
@@ -51,51 +52,90 @@ const spans = document.querySelectorAll('.input-box > span')
       
       
       function addChecked(i){
-        if(i===0){
-          spans[i].classList.add('checked')
-        }
-        if(0<i<=spans.length-1){
-          do{
+        if(!(clickedOn)){
+          if(0<i<=spans.length-1){
+            do{
+              spans[i].classList.add('checked')
+              i--}
+            while(i>=0);
+          }
+          if(i===0){
             spans[i].classList.add('checked')
-            i--}
-          while(i>=0);
+          }
         }
       }
 
       function removeChecked(i){
-        if(i===0){
-          spans[i].classList.remove('checked')
-        }
-        if(0<i<=spans.length-1){
-          do{
+        if(!(clickedOn)){
+          if(0<i<=spans.length-1){
+            do{
+              spans[i].classList.remove('checked')
+              i--}
+              while(i>=0)
+          }
+          if(i===0){
             spans[i].classList.remove('checked')
-            i--}
-            while(i>=0)
+          }
         }
       }
 
-      function checkedClick(i){
-        if(i===0){
-          if(spans[i].classList.contains('checked')){
-            spans[i].removeAttribute('onmouseout')
-            removeChecked(i)
+      // function checkedClick(i){
+      //   if(i===0){
+      //     if(spans[i].classList.contains('checked')){
+      //       spans[i].removeAttribute('onmouseout')
+      //       removeChecked(i)
+      //     }
+      //     if(!(spans[i].classList.contains('checked'))){
+      //       spans[i].removeAttribute('onmouseout')
+      //       addChecked(i)
+      //     } 
+      //   }
+      //   if(0<i<spans.length-1){
+      //     if(spans[i].classList.contains('checked')){
+      //       spans[i].removeAttribute('onmouseout')
+      //       removeChecked(i)
+      //     }
+      //     if(!(spans[i].classList.contains('checked'))){
+      //       spans[i].removeAttribute('onmouseout')
+      //       addChecked(i)
+      //     }
+      //   }
+      // }
+
+      
+
+      function starClick(i){
+        if(spans[i].classList.contains('checked') && clickedOn){
+          if(0>i<=spans.length-1){
+            do{
+              spans[i].classList.remove('checked')
+            i--}
+            while(i>=0)
+            clickedOn = false;
           }
-          if(!(spans[i].classList.contains('checked'))){
-            spans[i].removeAttribute('onmouseout')
-            addChecked(i)
-          } 
+          if(i===0){
+            spans[i].classList.remove('checked')
+            clickedOn = false;
+          }
         }
-        if(0<i<spans.length-1){
-          if(spans[i].classList.contains('checked')){
-            spans[i].removeAttribute('onmouseout')
-            removeChecked(i)
-          }
-          if(!(spans[i].classList.contains('checked'))){
-            spans[i].removeAttribute('onmouseout')
-            addChecked(i)
-          }
+
+        if(0<i<=spans.length-1){
+          do{
+            spans[i].classList.add('checked')
+            i--}
+            while(i>0);
+            clickedOn = true;
+        }
+
+        if(i===0){
+          spans[i].classList.add('checked')
+          clickedOn = true;
         }
       }
+
+      
+
+       
 
       
 
