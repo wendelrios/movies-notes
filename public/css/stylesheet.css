@@ -108,4 +108,14 @@ header > div{
   text-align: center;
 }
 
+.checked{
+  color:orange
+}
+
+.span-style{
+  margin: 8px 0 5px 0;
+  letter-spacing: 4px;
+  cursor: pointer; 
+}
+
 

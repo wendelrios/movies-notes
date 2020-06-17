@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/stylesheet.css">
   <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
@@ -32,7 +33,12 @@
               <input type="text" placeholder="year" id="year" required>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="whats your grade" id="grade" required>
+              <!-- <input type="text" placeholder="whats your grade" id="grade" required> -->
+              <span class="fa fa-star span-style "onmouseover="addChecked(0)" onmouseout="removeChecked(0)" onclick="checkedClick(0)"></span>
+              <span class="fa fa-star span-style "onmouseover="addChecked(1)" onmouseout="removeChecked(1)"></span>
+              <span class="fa fa-star span-style "onmouseover="addChecked(2)" onmouseout="removeChecked(2)"></span>
+              <span class="fa fa-star span-style "onmouseover="addChecked(3)" onmouseout="removeChecked(3)"></span>  
+              <span class="fa fa-star span-style" onmouseover="addChecked(4)" onmouseout="removeChecked(4)"></span>    
             </div>
             <div class="input-box button-style">
               <button type="button" onclick="createCard()" id="create-button">create card</button>
