@@ -106,6 +106,11 @@ let clickedOn = false;
 
       function starClick(i){
         if(spans[i].classList.contains('checked') && clickedOn){
+          if((i<spans.length - 1)){
+            if(spans[i+1].classList.contains('checked')){
+              return
+            }
+          }
           if(0>i<=spans.length-1){
             do{
               spans[i].classList.remove('checked')
