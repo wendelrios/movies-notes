@@ -48,9 +48,6 @@ let clickedOn = false;
         }
       }
 
-      
-      
-      
       function addChecked(i){
         if(!(clickedOn)){
           if(0<i<=spans.length-1){
@@ -78,31 +75,6 @@ let clickedOn = false;
           }
         }
       }
-
-      // function checkedClick(i){
-      //   if(i===0){
-      //     if(spans[i].classList.contains('checked')){
-      //       spans[i].removeAttribute('onmouseout')
-      //       removeChecked(i)
-      //     }
-      //     if(!(spans[i].classList.contains('checked'))){
-      //       spans[i].removeAttribute('onmouseout')
-      //       addChecked(i)
-      //     } 
-      //   }
-      //   if(0<i<spans.length-1){
-      //     if(spans[i].classList.contains('checked')){
-      //       spans[i].removeAttribute('onmouseout')
-      //       removeChecked(i)
-      //     }
-      //     if(!(spans[i].classList.contains('checked'))){
-      //       spans[i].removeAttribute('onmouseout')
-      //       addChecked(i)
-      //     }
-      //   }
-      // }
-
-      
 
       function starClick(i){
         if(spans[i].classList.contains('checked') && clickedOn){
