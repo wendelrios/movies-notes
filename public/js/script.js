@@ -110,7 +110,7 @@ let clickedOn = false; // variavel que verifica se as estrelas estao no estado d
           }
         }
 
-        //Adiciona checked de acordo com a posição
+        //Adiciona checked e estado clicado na estrela, de acordo com a posição
         if(0<i<=spans.length-1){
           do{
             spans[i].classList.add('checked')
