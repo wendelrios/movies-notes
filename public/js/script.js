@@ -1,7 +1,8 @@
-let pai = document.getElementById('right-side')
-const spans = document.querySelectorAll('.input-box > span')
-let clickedOn = false;
+let pai = document.getElementById('right-side') // div onde os cards serão inseridos
+const spans = document.querySelectorAll('.input-box > span')// estrelas a serem inseridas no card
+let clickedOn = false; // variavel que verifica se as estrelas estao no estado de clicadas 
 
+//função responsável pela criação dos cards
     function createCard(){
 
       let name = document.getElementById('name').value
@@ -18,6 +19,7 @@ let clickedOn = false;
         let card = document.createElement('div');
         card.setAttribute('class', 'card-style')
 
+        //trecho onde o array allValues é percorrido e os campos do card são criados e preenchidos
         allValues.forEach((value, index) => {
           let div = document.createElement('div');
           if(index === 4){
@@ -42,6 +44,7 @@ let clickedOn = false;
         
         pai.insertBefore(card,null)
 
+        //trecho criado para limpar campos do formulário após o card ser criado.
         let inputBox = document.querySelectorAll('.input-box > input')
         for(let i = 0; i<inputBox.length;i++){
           inputBox[i].value = '';
@@ -51,6 +54,7 @@ let clickedOn = false;
         })
       }
 
+      //função responsável por adicionar classe checked(pinta estrela de amarelo) nas estrelas
       function addChecked(i){
         if(!(clickedOn)){
           if(0<i<=spans.length-1){
@@ -65,6 +69,7 @@ let clickedOn = false;
         }
       }
 
+      //função responsável por remover classe checked das estrelas
       function removeChecked(i){
         if(!(clickedOn)){
           if(0<i<=spans.length-1){
@@ -79,13 +84,18 @@ let clickedOn = false;
         }
       }
 
+      //função responsável por adicionar classe checked de acordo com estado das estrelas 
       function starClick(i){
+        //trecho que eu verifico se a sucessora de alguma estrela está clicada, 
+        //exceto a última estrela, pois essa não possui sucessora
+        //Se sim, eu impeço a estrela em questão de ser clicada.
         if(spans[i].classList.contains('checked') && clickedOn){
           if((i<spans.length - 1)){
             if(spans[i+1].classList.contains('checked')){
               return
             }
           }
+          //Se estrela está clicada, desative classe checked.
           if(0>i<=spans.length-1){
             do{
               spans[i].classList.remove('checked')
@@ -99,6 +109,7 @@ let clickedOn = false;
           }
         }
 
+        //se estrela não está clicada, adicione classe checked
         if(0<i<=spans.length-1){
           do{
             spans[i].classList.add('checked')
