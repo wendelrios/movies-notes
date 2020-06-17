@@ -86,9 +86,10 @@ let clickedOn = false; // variavel que verifica se as estrelas estao no estado d
 
       //função responsável por adicionar classe checked de acordo com estado das estrelas 
       function starClick(i){
-        //trecho que eu verifico se a sucessora de alguma estrela está clicada, 
-        //exceto a última estrela, pois essa não possui sucessora
+        //Trecho que eu verifico se a sucessora de alguma estrela está clicada, 
+        //Exceto a última estrela, pois essa não possui sucessora
         //Se sim, eu impeço a estrela em questão de ser clicada.
+        //Só entra nesse bloco, se a estrela tem classe checked, está clicada, não é a última e a sucessora está clicada.
         if(spans[i].classList.contains('checked') && clickedOn){
           if((i<spans.length - 1)){
             if(spans[i+1].classList.contains('checked')){
@@ -109,7 +110,7 @@ let clickedOn = false; // variavel que verifica se as estrelas estao no estado d
           }
         }
 
-        //se estrela não está clicada, adicione classe checked
+        //Adiciona checked de acordo com a posição
         if(0<i<=spans.length-1){
           do{
             spans[i].classList.add('checked')
