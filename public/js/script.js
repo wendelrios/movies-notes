@@ -6,7 +6,7 @@ let clickedOn = false;
 
       let name = document.getElementById('name').value
       let genre = document.getElementById('genre').value
-      let director = document.getElementById('director').valuex
+      let director = document.getElementById('director').value
       let year = document.getElementById('year').value
       
 
