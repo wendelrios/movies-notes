@@ -46,6 +46,9 @@ let clickedOn = false;
         for(let i = 0; i<inputBox.length;i++){
           inputBox[i].value = '';
         }
+        spans.forEach(span => {
+          span.classList.remove('checked')
+        })
       }
 
       function addChecked(i){
