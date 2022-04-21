@@ -1,3 +1,3 @@
 # movies-notes
-Passatempo, criado em Javascript, que serve pra criar notas sobre filmes assistidos. Feito com HTML, CSS e Javascript puro.<br/>
+Página criada com intuito de treinar skills em Javascript puro e HTML<br/>
 https://wendelrios.github.io/movies-notes/
