@@ -1,3 +1,3 @@
 # movies-notes
-Página criada com intuito de treinar skills em Javascript puro e HTML<br/>
+treinando um pouco de js puro<br/>
 https://wendelrios.github.io/movies-notes/
